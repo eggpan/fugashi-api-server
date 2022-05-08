@@ -26,5 +26,7 @@ docker run -d -p 8000:8000 eggpan/fugashi-api-server
 
 ---
 
-`text` をGETパラメータとして渡すと、JSONが帰ってきます。  
-http://localhost:8000?text=麩菓子は、麩を主材料とした日本の菓子。
+`text` をGETパラメータとして渡すと、JSONが帰ってきます。
+
+デモ  
+https://fugashi-api-server.herokuapp.com?text=麩菓子は、麩を主材料とした日本の菓子。
