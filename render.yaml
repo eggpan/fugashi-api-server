@@ -3,3 +3,6 @@ services:
     name: fugashi-api-server
     env: docker
     healthCheckPath: /
+    scaling:
+      minInstances: 1
+      maxInstances: 1
