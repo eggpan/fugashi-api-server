@@ -1,6 +1,6 @@
 # fugashi-api-server
 
-[fugashi](https://github.com/polm/fugashi) を利用したAPIサーバ
+[fugashi](https://github.com/polm/fugashi) を利用した、形態素解析を行うAPIサーバ
 
 ## Usage
 
