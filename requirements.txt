@@ -1,0 +1,2 @@
+gunicorn
+fugashi[unidic]

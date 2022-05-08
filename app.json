@@ -1,0 +1,10 @@
+{
+  "name": "fugashi API Server",
+  "description": "API server for morphological analysis using fugashi.",
+  "keywords": [
+    "fugashi",
+    "heroku"
+  ],
+  "repository": "https://github.com/eggpan/fugashi-api-server",
+  "stack": "container"
+}
