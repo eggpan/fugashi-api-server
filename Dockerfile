@@ -10,7 +10,6 @@ RUN apk add --no-cache \
 
 RUN mkdir /opt/app
 COPY requirements.txt /tmp/
-COPY app.py /opt/app/
 
 RUN git clone -q https://github.com/taku910/mecab.git /opt/mecab \
   && cd /opt/mecab/mecab \
@@ -22,6 +21,7 @@ RUN git clone -q https://github.com/taku910/mecab.git /opt/mecab \
   && rm -rf /tmp/requirements.txt /opt/mecab/
 
 WORKDIR /opt/app
+COPY app.py /opt/app/
 RUN adduser -D heroku
 USER heroku
 

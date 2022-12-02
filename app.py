@@ -31,6 +31,13 @@ def errorResponse(start_response, message):
     return [message.encode('utf-8')]
 
 def application(environ, start_response):
+    if environ['PATH_INFO'] == '/healthz':
+        start_response('200 OK', [
+            ('Content-Type', 'text/plain'),
+            ('Content-Length', '0'),
+        ])
+        return []
+
     # 404 Not Found except for root access.
     if environ['PATH_INFO'] != '/':
         return errorResponse(start_response, '404 Not Found')
