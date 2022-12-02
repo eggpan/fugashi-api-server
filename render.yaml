@@ -3,4 +3,3 @@ services:
     name: fugashi-api-server
     env: docker
     plan: free
-    healthCheckPath: /
