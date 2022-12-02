@@ -29,4 +29,4 @@ gunicorn app
 `text` をGETパラメータとして渡すと、JSONが帰ってきます。
 
 デモ  
-https://fugashi-api-server.herokuapp.com?text=麩菓子は、麩を主材料とした日本の菓子。
+https://fugashi-api-server-vchq.onrender.com/?text=麩菓子は、麩を主材料とした日本の菓子。
