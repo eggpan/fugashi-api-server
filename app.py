@@ -5,10 +5,11 @@ import pprint
 
 import os
 
+tagger = fugashi.Tagger('-Owakati')
+
 def parseText(text):
-    tagger = fugashi.Tagger('-Owakati')
     results = []
-    for node in tagger(text):
+    for node in tagger.parseToNodeList(text):
         # @see 列名については https://clrd.ninjal.ac.jp/unidic/faq.html#col_name
         results.append({
             'text': str(node),
