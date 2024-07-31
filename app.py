@@ -7,20 +7,20 @@ import os
 
 tagger = fugashi.Tagger('-Owakati')
 
-def parseText(text):
+def parseText(text, fields):
+    if fields is None:
+        fields = ['pos1', 'pos2', 'pos3', 'pos4', 'lemma', 'orthBase', 'kanaBase', 'cType', 'cForm', 'type']
+
     results = []
     for node in tagger.parseToNodeList(text):
         # @see 列名については https://clrd.ninjal.ac.jp/unidic/faq.html#col_name
-        results.append({
+        token = {
             'text': str(node),
-            'pos1': node.feature.pos1,         # 品詞大分類
-            'pos2': node.feature.pos2,         # 品詞中分類
-            'pos3': node.feature.pos3,         # 品詞小分類
-            'pos4': node.feature.pos4,         # 品詞細分類
-            'lemma': node.feature.lemma,       # 語彙素 (＋語彙素細分類)
-            'orthBase': node.feature.orthBase, # 書字形基本形
-            'kanaBase': node.feature.kanaBase  # 仮名形基本形
-        })
+        }
+        for field in fields:
+            token[field] = getattr(node.feature, field, None)
+
+        results.append(token)
     return results
 
 def errorResponse(start_response, message):
@@ -57,8 +57,11 @@ def application(environ, start_response):
         return errorResponse(start_response, '400 Bad Request')
 
     text = query.get('text')[-1]
+    fields = None
+    if query.get('fields') is not None:
+        fields = query.get('fields')[-1].split(',')
 
-    output = json.dumps(parseText(text), ensure_ascii=False)
+    output = json.dumps(parseText(text, fields), ensure_ascii=False)
     start_response('200 OK', [
         ('Content-Type', 'application/json'),
         ('Content-Length', str(len(output.encode('utf-8')))),
