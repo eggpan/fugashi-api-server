@@ -19,7 +19,10 @@ def parseText(text):
             'pos4': node.feature.pos4,         # 品詞細分類
             'lemma': node.feature.lemma,       # 語彙素 (＋語彙素細分類)
             'orthBase': node.feature.orthBase, # 書字形基本形
-            'kanaBase': node.feature.kanaBase  # 仮名形基本形
+            'kanaBase': node.feature.kanaBase,  # 仮名形基本形
+            'cType': node.feature.cType,
+            'cForm': node.feature.cForm,
+            'type': node.feature.type,
         })
     return results
 
