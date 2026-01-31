@@ -9,7 +9,7 @@ tagger = fugashi.Tagger('-Owakati')
 
 def parseText(text, fields):
     if fields is None:
-        fields = ['pos1', 'pos2', 'pos3', 'pos4', 'lemma', 'orthBase', 'kanaBase', 'cType', 'cForm', 'type']
+        fields = ['pos1', 'pos2', 'pos3', 'pos4', 'lemma', 'orthBase', 'kana', 'kanaBase', 'cType', 'cForm', 'type']
 
     results = []
     for node in tagger.parseToNodeList(text):
