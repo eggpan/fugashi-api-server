@@ -1,3 +1,8 @@
 .git/
+.github/
+.agents/
+.aws/
+.codex/
+.venv/
 __pycache__/
 app.json
