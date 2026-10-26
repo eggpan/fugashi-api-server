@@ -32,7 +32,6 @@ jobs:
           images: eggpan/fugashi-api-server
           flavor: latest=false
           tags: |
-            type=ref,event=branch
             type=ref,event=tag
             type=ref,event=pr
             type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}

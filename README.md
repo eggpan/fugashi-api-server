@@ -47,7 +47,7 @@ GitHubリポジトリの Settings → Secrets and variables → Actions に次�
 
 | push先 | 公開されるDockerタグ |
 | --- | --- |
-| `main` | `main`, `latest` |
+| `main` | `latest` |
 | `v1.2.3` などのGitタグ | Gitタグと同じ名前（例: `v1.2.3`） |
 
 Gitタグの `/` など、Dockerタグに使用できない文字は `-` に変換されます。
