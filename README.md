@@ -15,6 +15,9 @@
 docker run -d -p 8000:8000 eggpan/fugashi-api-server
 ```
 
+MeCabをビルドする際、`./configure` の前に `config.guess` と `config.sub` を
+Alpineのautomakeパッケージに含まれる版へ更新し、arm64を認識できるようにしています。
+
 ### 直接実行する場合
 ```bash
 git clone https://github.com/eggpan/fugashi-api-server.git
