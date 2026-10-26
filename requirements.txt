@@ -1,0 +1,3 @@
+fugashi[unidic]==1.5.2
+gunicorn==26.2.0
+unidic==1.1.0

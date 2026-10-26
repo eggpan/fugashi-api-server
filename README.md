@@ -15,8 +15,18 @@
 docker run -d -p 8000:8000 eggpan/fugashi-api-server
 ```
 
+ローカルでビルドする場合:
+
+```bash
+docker build -t fugashi-api-server .
+docker run --rm -p 8000:8000 fugashi-api-server
+```
+
+Alpine 3.24と、同ブランチで提供されるPython 3.14を使用します。
+Pythonの依存ライブラリは `requirements.txt` でバージョンを固定しています。
 MeCabをビルドする際、`./configure` の前に `config.guess` と `config.sub` を
 Alpineのautomakeパッケージに含まれる版へ更新し、arm64を認識できるようにしています。
+UniDicの辞書はビルド時にダウンロードするため、インターネット接続と十分な空き容量が必要です。
 
 ### 直接実行する場合
 ```bash
